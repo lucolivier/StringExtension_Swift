@@ -79,10 +79,11 @@ do {
 	let (r,res,error) = try text0.rangeOfString("to", occurence: -1)
 
 	if r != nil {
-		print("\(r!.startIndex) - \(r!.endIndex)")
+		//print("\(r!.startIndex) - \(r!.endIndex)")
+        print("\(r!.lowerBound) - \(r!.upperBound)")
 
 	} else {
-		if (res == String.StringExtensionResults.RangeOfString_Exception) {
+		if (res == String.StringExtensionResults.rangeOfString_Exception) {
 			print(error!)
 		} else {
 			print(res)
@@ -96,9 +97,10 @@ do {
 var string0 = "Hello, World, great World"
 let (r,res,error) = try string0.rangeOfString("Wor-ld", occurence: 3)
 if r != nil {
-	print("\(r!.startIndex) - \(r!.endIndex)")
+	//print("\(r!.startIndex) - \(r!.endIndex)")
+    print("\(r!.lowerBound) - \(r!.upperBound)")
 } else {
-	if (res == String.StringExtensionResults.RangeOfString_Exception) {
+	if (res == String.StringExtensionResults.rangeOfString_Exception) {
 		print(error!)
 	} else {
 		print(res)
@@ -115,10 +117,11 @@ do {
 	let (r,res,error) = try text.rangeOfString("to", occurence: -1)
 
 	if r != nil {
-		print("\(r!.startIndex) - \(r!.endIndex)")
+		//print("\(r!.startIndex) - \(r!.endIndex)")
+        print("\(r!.lowerBound) - \(r!.upperBound)")
 
 	} else {
-		if (res == String.StringExtensionResults.RangeOfString_Exception) {
+		if (res == String.StringExtensionResults.rangeOfString_Exception) {
 			print(error!)
 		} else {
 			print(res)
@@ -133,9 +136,10 @@ print ("--")
 var string = "Hello, World, great World"
 let (r0,res0,error0) = try string.rangeOfString("Wor-ld", occurence: 3)
 if r0 != nil {
-	print("\(r0!.startIndex) - \(r0!.endIndex)")
+	//print("\(r0!.startIndex) - \(r0!.endIndex)")
+    print("\(r0!.lowerBound) - \(r0!.upperBound)")
 } else {
-	if (res == String.StringExtensionResults.RangeOfString_Exception) {
+	if (res == String.StringExtensionResults.rangeOfString_Exception) {
 		print(error0!)
 	} else {
 		print(res0)
@@ -157,7 +161,7 @@ var strrem = "Hello, !World!"
 do {
 	//let (res, error) = try String.removeString(&strrem, string: "!", occurence: 1)
 	let (res, error) = try strrem.removeString("!", occurence: 2)
-	if (res == String.StringExtensionResults.RemoveString_Exception) {
+	if (res == String.StringExtensionResults.removeString_Exception) {
 		print(error!)
 	} else {
 		print(res)
@@ -174,8 +178,8 @@ var strins = "Hello, !World!"
 
 do {
 	//let (res,error) = try String.insertString(&strins, string: " Hello,", anchor: "World", occurence: 1, mode: String.StringInsertMode.After)
-	let (res,error) = try strins.insertString(" Hello,", anchor: "World", occurence: 1, mode: String.StringInsertMode.After)
-	if (res == String.StringExtensionResults.InsertString_Exception) {
+	let (res,error) = try strins.insertString(" Hello,", anchor: "World", occurence: 1, mode: String.StringInsertMode.after)
+	if (res == String.StringExtensionResults.insertString_Exception) {
 		print(error!)
 	} else {
 		print(res)
@@ -194,7 +198,7 @@ var strrep = "Hello, !World!"
 do {
 	//let (res, error) = try String.replaceString(&strrep, anchor: "!", string: "!!!", occurence: 1)
 	let (res, error) = try strrep.replaceString("!", string: "!!!", occurence: 1)
-	if (res == String.StringExtensionResults.RemoveString_Exception) {
+	if (res == String.StringExtensionResults.removeString_Exception) {
 		print(error!)
 	} else {
 		print(res)
